@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469940806277239435, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2485307139592247608, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_Name
       value: Tile_CornerPiece
