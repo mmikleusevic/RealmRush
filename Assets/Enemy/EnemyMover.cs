@@ -12,7 +12,7 @@ public class EnemyMover : MonoBehaviour
 
     const string Path = "Path"; 
 
-    void Start()
+    void OnEnable()
     {
         FindPath();
         ReturnToStart();
@@ -56,6 +56,6 @@ public class EnemyMover : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
