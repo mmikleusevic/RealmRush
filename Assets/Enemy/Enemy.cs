@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public void RewardGold()
     {
         if (bank == null) return;
+
         bank.Deposit(goldReward);
     }
 
@@ -25,8 +26,13 @@ public class Enemy : MonoBehaviour
     {
         if (bank == null) return;
 
-        health.DecreaseHealth(damage);
-
         bank.Withdraw(goldPenalty);
+    }
+
+    public void DealDamage()
+    {
+        if (health == null) return;
+
+        health.DecreaseHealth(damage);
     }
 }

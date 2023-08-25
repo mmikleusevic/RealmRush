@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 [InitializeOnLoad]
 public class SceneManagerScript : ScriptableObject
 {
-    static SceneManagerScript sceneManagerScript = null;
+    private static SceneManagerScript instance;
 
     public static SceneManagerScript GetInstance()
     {
-        if (sceneManagerScript == null)
+        if (instance == null)
         {
-            sceneManagerScript = CreateInstance<SceneManagerScript>();
+            instance = CreateInstance<SceneManagerScript>();
         }
-        return sceneManagerScript;
+
+        return instance;
     }
 
     public void ManageScene(Scene scene)

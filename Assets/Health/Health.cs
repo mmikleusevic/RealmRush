@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    int maxHealth = 20;
-    int currentHealth;
-    int waitForSeconds = 1;
-
     [SerializeField] TextMeshProUGUI displayHealth;
     [SerializeField] TextMeshProUGUI displayLevelText;
 
-    SceneManagerScript SceneManagerScript;
+    int maxHealth = 20;
+    int currentHealth;
+    int waitForSeconds = 2;
 
+    GameManager gameManager;
+    SceneManagerScript sceneManagerScript;
 
-    void Awake()
+    void Start()
     {
         currentHealth = maxHealth;
-        SceneManagerScript = SceneManagerScript.GetInstance();
+        gameManager = GameManager.GetInstance();
+        sceneManagerScript = SceneManagerScript.GetInstance();
         UpdateHealthDisplay();
     }
 
@@ -27,8 +28,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            GameOverText();
-            Invoke("ReloadLevelOnDeath",waitForSeconds);
+            GameOver();
         }
 
         UpdateHealthDisplay();
@@ -49,18 +49,23 @@ public class Health : MonoBehaviour
         UpdateHealthDisplay();
     }
 
-    void ReloadLevelOnDeath()
-    {
-        SceneManagerScript.ManageScene(Scene.Reload);
-    }
-
     void UpdateHealthDisplay()
     {
         displayHealth.text = "Health: " + currentHealth;
     }
 
-    void GameOverText() 
+    void GameOver() 
     {
         displayLevelText.text = "Game Over";
+        StartCoroutine(ReloadLevelOnDeath());
+    }
+
+    IEnumerator ReloadLevelOnDeath()
+    {
+        gameManager.PauseScreen();
+        yield return new WaitForSecondsRealtime(waitForSeconds);
+        gameManager.UnpauseScreen();
+
+        sceneManagerScript.ManageScene(Scene.Reload);
     }
 }

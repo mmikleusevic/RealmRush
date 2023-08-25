@@ -9,7 +9,7 @@ public class Waypoint : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (isPlaceable)
+        if (isPlaceable && !GameManager.IsPaused)
         {
             bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform.position);
             isPlaceable = !isPlaced;
