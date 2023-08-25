@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -7,12 +8,17 @@ public class Health : MonoBehaviour
     int currentHealth;
     int waitForSeconds = 1;
 
+    [SerializeField] TextMeshProUGUI displayHealth;
+    [SerializeField] TextMeshProUGUI displayLevelText;
+
     SceneManagerScript SceneManagerScript;
+
 
     void Awake()
     {
         currentHealth = maxHealth;
         SceneManagerScript = SceneManagerScript.GetInstance();
+        UpdateHealthDisplay();
     }
 
     public void DecreaseHealth(int damage)
@@ -21,9 +27,11 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            GameOverText();
             Invoke("ReloadLevelOnDeath",waitForSeconds);
-            Debug.Log("Game Over");
         }
+
+        UpdateHealthDisplay();
     }
 
     public void IncreaseHealth(int healthPoints)
@@ -38,10 +46,21 @@ public class Health : MonoBehaviour
         {
             currentHealth += healthPoints;
         }
+        UpdateHealthDisplay();
     }
 
     void ReloadLevelOnDeath()
     {
         SceneManagerScript.ManageScene(Scene.Reload);
+    }
+
+    void UpdateHealthDisplay()
+    {
+        displayHealth.text = "Health: " + currentHealth;
+    }
+
+    void GameOverText() 
+    {
+        displayLevelText.text = "Game Over";
     }
 }
