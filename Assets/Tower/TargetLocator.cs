@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform weapon;
     [SerializeField] ParticleSystem projectileParticles;
     [SerializeField] float range = 15f;
-    [SerializeField] [Range(0f, 5f)] float speed = 2f;
+    [SerializeField][Range(0f, 5f)] float speed = 5f;
 
     Enemy[] enemies;
 
@@ -31,7 +28,7 @@ public class TargetLocator : MonoBehaviour
         {
             float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
 
-            if(targetDistance < maxDistance)
+            if (targetDistance < maxDistance)
             {
                 closestTarget = enemy.transform;
                 maxDistance = targetDistance;

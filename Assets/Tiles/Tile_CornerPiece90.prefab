@@ -12,17 +12,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_CornerPiece90
       objectReference: {fileID: 0}
+    - target: {fileID: 2315094668038865083, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089251261623140509, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_text
+      value: 2,3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089251261623140509, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089251261623140509, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089251261623140509, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089251261623140509, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089251261623140509, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286611584
+      objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 8.943281
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -54.021683
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 32.214005
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,15 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6353427272624849512, guid: c90b99cc6dd6afe48bdbea8b6f679624, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

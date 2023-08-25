@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
@@ -27,7 +26,7 @@ public class ObjectPool : MonoBehaviour
     {
         pool = new GameObject[poolSize];
 
-        for(int i = 0; i < poolSize; i++) 
+        for (int i = 0; i < poolSize; i++)
         {
             pool[i] = Instantiate(enemyPrefab, transform);
             pool[i].SetActive(false);
@@ -36,7 +35,7 @@ public class ObjectPool : MonoBehaviour
 
     void EnableObjectInPool()
     {
-        for(int i = 0;i < poolSize; i++)
+        for (int i = 0; i < poolSize; i++)
         {
             if (!pool[i].activeInHierarchy)
             {
@@ -53,7 +52,7 @@ public class ObjectPool : MonoBehaviour
         {
             EnableObjectInPool();
 
-            if(spawnEnemyCount == maxEnemyCount) break;
+            if (spawnEnemyCount == maxEnemyCount) break;
 
             yield return new WaitForSeconds(spawnTimer);
         }

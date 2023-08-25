@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -8,9 +6,16 @@ public class EnemyHealth : MonoBehaviour
 
     int currentHitPoints = 0;
 
+    Enemy enemy;
+
     void OnEnable()
     {
         currentHitPoints = maxHitPoints;
+    }
+
+    void Start()
+    {
+        enemy = GetComponent<Enemy>();
     }
 
 
@@ -23,9 +28,10 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHitPoints--;
 
-        if(currentHitPoints <= 0)
+        if (currentHitPoints <= 0)
         {
             gameObject.SetActive(false);
+            enemy.RewardGold();
         }
     }
 }

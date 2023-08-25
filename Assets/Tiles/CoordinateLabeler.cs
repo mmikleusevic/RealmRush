@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour

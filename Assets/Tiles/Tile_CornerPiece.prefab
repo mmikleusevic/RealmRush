@@ -20,9 +20,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_CornerPiece
       objectReference: {fileID: 0}
+    - target: {fileID: 2485307139592247608, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_TagString
+      value: Path
+      objectReference: {fileID: 0}
     - target: {fileID: 4243160103909677342, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_text
       value: 0,0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243160103909677342, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243160103909677342, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243160103909677342, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5501131026230708004, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_Mesh
