@@ -8,9 +8,9 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField][Range(0f, 5f)] float speed = 1f;
 
-    const string Path = "Path";
-
     Enemy enemy;
+
+    const string Path = "Path";
 
     void OnEnable()
     {
@@ -34,7 +34,7 @@ public class EnemyMover : MonoBehaviour
         {
             Waypoint waypoint = child.GetComponent<Waypoint>();
 
-            if (waypoint != null)
+            if(waypoint != null)
             {
                 path.Add(waypoint);
             }
@@ -43,6 +43,7 @@ public class EnemyMover : MonoBehaviour
 
     void ReturnToStart()
     {
+        Debug.Log(path[0].name);
         transform.position = path[0].transform.position;
     }
 
