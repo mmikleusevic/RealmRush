@@ -43,7 +43,6 @@ public class EnemyMover : MonoBehaviour
 
     void ReturnToStart()
     {
-        Debug.Log(path[0].name);
         transform.position = path[0].transform.position;
     }
 
