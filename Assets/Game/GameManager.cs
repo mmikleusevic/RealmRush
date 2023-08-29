@@ -47,7 +47,16 @@ public class GameManager : ScriptableObject
     {
         if (panel == null)
         {
-            panel = GameObject.FindGameObjectWithTag(Panel);
+            Transform canvas = FindObjectOfType<Canvas>().GetComponentInChildren<Transform>();
+
+            foreach (Transform transform in canvas)
+            {
+                if (transform.CompareTag(Panel))
+                {
+                    panel = transform.gameObject;
+                    return;
+                }
+            }
         }
     }
 }

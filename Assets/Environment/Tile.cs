@@ -34,21 +34,16 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!bank || !towerPrefab) return;
+        if (!bank || !towerPrefab || bank.CurrentBalance < towerPrefab.Cost) return;
 
-        if(bank.CurrentBalance >= towerPrefab.Cost)
+        if (gridManager.GetNode(coordinates).isWalkable && !GameManager.IsPaused && !pathfinder.WillBlockPath(coordinates))
         {
-            if (gridManager.GetNode(coordinates).isWalkable && !GameManager.IsPaused && !pathfinder.WillBlockPath(coordinates))
-            {
-                bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform.position);
+            towerPrefab.CreateTower(towerPrefab, transform.position);
 
-                if (isPlaced)
-                {
-                    bank.Withdraw(towerPrefab.Cost);
-                    isPlaceable = !isPlaced;
-                    gridManager.BlockNode(coordinates);
-                }
-            }
+            bank.Withdraw(towerPrefab.Cost);
+
+            gridManager.BlockNode(coordinates);
+            pathfinder.NotifyReceivers();
         }
     }
 }

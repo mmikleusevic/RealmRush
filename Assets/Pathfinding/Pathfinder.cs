@@ -5,7 +5,10 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] Vector2Int startCoordinates;
+    public Vector2Int StartCoordinates { get { return startCoordinates; } }
+
     [SerializeField] Vector2Int endCoordinates;
+    public Vector2Int EndCoordinates { get { return startCoordinates; } }
 
     Node startNode;
     Node endNode;
@@ -27,21 +30,25 @@ public class Pathfinder : MonoBehaviour
         if(gridManager != null)
         {
             grid = gridManager.Grid;
+            startNode = grid[startCoordinates];
+            endNode = grid[endCoordinates];
         }
     }
 
     void Start()
     {
-        startNode = gridManager.Grid[startCoordinates];
-        endNode = gridManager.Grid[endCoordinates];
-
         GetNewPath();
     }
 
     public List<Node> GetNewPath()
     {
+        return GetNewPath(startCoordinates);
+    }
+
+    public List<Node> GetNewPath(Vector2Int coordinates)
+    {
         gridManager.ResetNodes();
-        BreadthFirstSearch();
+        BreadthFirstSearch(coordinates);
 
         return BuildPath();
     }
@@ -71,17 +78,20 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    void BreadthFirstSearch()
+    void BreadthFirstSearch(Vector2Int coordinates)
     {
+        startNode.isWalkable = true;
+        endNode.isWalkable = true;
+
         frontier.Clear();
         reached.Clear();
 
         bool isRunning = true;
 
-        frontier.Enqueue(startNode);
-        reached.Add(startCoordinates, startNode);
+        frontier.Enqueue(grid[coordinates]);
+        reached.Add(coordinates, grid[coordinates]);
 
-        while(frontier.Count > 0 && isRunning)
+        while (frontier.Count > 0 && isRunning)
         {
             currentSearchNode = frontier.Dequeue();
             currentSearchNode.isExplored = true;
@@ -134,5 +144,10 @@ public class Pathfinder : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void NotifyReceivers()
+    {
+        BroadcastMessage(EnemyMover.RecalculatePathMethodName, false, SendMessageOptions.DontRequireReceiver);
     }
 }
