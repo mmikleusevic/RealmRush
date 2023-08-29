@@ -14,7 +14,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243160103909677342, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_text
-      value: 0,0
+      value: 3,0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894043691433641869, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894043691433641869, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894043691433641869, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894043691433641869, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894043691433641869, guid: 85b673372921dde42851194cbd2a4368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5501131026230708004, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_Mesh
@@ -22,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: -2432090755550338912, guid: fa1397209d9adee4db5f8a2bba8327f0, type: 3}
     - target: {fileID: 6518577315644808171, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6518577315644808171, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 6518577315644808171, guid: 85b673372921dde42851194cbd2a4368, type: 3}
       propertyPath: m_LocalPosition.z
